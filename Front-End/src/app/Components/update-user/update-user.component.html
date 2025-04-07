@@ -1,0 +1,104 @@
+<body class="page app  items index">
+
+    <!------------------------------------------------------------------------------->
+
+    <app-header></app-header>
+
+    <!------------------------------------------------------------------------------->
+<div class="card">
+    <div class="card-body">
+      <div class="col-md-6">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+          <div class="header">
+            <h1>Update Account</h1>
+
+          </div>
+
+          <div class="form-group">
+            <label for="first_name">First name</label>
+            <input matInput type="text" id="first_name" name="first_name" class="form-control "
+              formControlName="firstName" placeholder="first_name" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input matInput type="text" id="last_name" name="last_name" class="form-control "
+              formControlName="lastName" placeholder="last_name" required autofocus>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input matInput type="email" id="email" name="email" class="form-control " formControlName="email"
+              placeholder="Email" required autofocus>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input matInput formControlName="password" type="password" id="password" name="password"
+              class="form-control " placeholder="Password" required>
+          </div>
+
+
+
+          <div class="form-group">
+            <button class="btn btn-primary px-4" type="submit">Update</button>
+          </div>
+
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <!------------------------------------------------------------------------------->
+
+  <!-- <footer>
+    <div class="container">
+        <div class="card-columns">
+            <div class="card">
+                <div class="social">
+                    <a class="logo-footer" href="#">
+                        <img src="images/logo_bidonline%402x.png"
+                            srcset="https://bidonline.my/images/logo_bidonline.png 320w, https://bidonline.my/images/logo_bidonline@2x.png 767w, https://bidonline.my/images/logo_bidonline@3x.png 1200w"
+                            alt="Bidonline.my" width="135" /> </a>
+                </div>
+            </div>
+            <div class="card">
+                <h5>Bid Battle</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a href="/Home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Auctions">
+                            Auctions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h5>Contact</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <i class="fad fa-phone-square-alt"></i>
+                        <a class="text-reset" href="tel:+60361378828">+216 93 337 330</a>
+                    </li>
+                    <li>
+                        <i class="fad fa-envelope"></i>
+                        <a class="text-reset" href="support@gmail.com">support&#64;gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer> -->
+<app-footer></app-footer>
+<!------------------------------------------------------------------------------->
+</body>

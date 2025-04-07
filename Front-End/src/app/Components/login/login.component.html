@@ -1,0 +1,98 @@
+<body class="page app  login">
+            
+    <!------------------------------------------------------------------------------->
+            
+    <app-header></app-header>  
+      
+    <!------------------------------------------------------------------------------->      
+      
+  
+      <div class="content">
+          <div class="row no-gutters">
+  <div class="col-md-6">
+      <div class="cover"></div>
+  </div>
+  <div class="col-md-6">
+      <form [formGroup]="form" (ngSubmit)="onsub()">
+          <input type="hidden" name="_token" value="tVzcnTt4Td220axQalqNwy2x99otq8wKQhKBZIzq">
+          
+          <div class="header">
+              <h1>Welcome Back</h1>
+              <p class="subtitle">Login to your account.</p>
+              <p class="subtitle">Does't have an account? <a href="/Signup">Sign up here</a></p>
+          </div>
+  
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input matInput formControlName="email" type="email" id="email" name="email" class="form-control " value="" placeholder="Email" autocomplete="email" required autofocus>
+                          </div>
+          <div class="form-group">
+              <label for="password">Password</label>
+              <input matInput formControlName="password" type="password" id="password" name="password" class="form-control " placeholder="Password" required>
+                      
+         </div>
+  
+     
+       
+          <div class="form-group">
+              <button class="btn btn-primary" type="submit">Log In</button>
+          </div>
+  
+     
+      </form>
+  </div>
+  </div>
+      </div>
+  <!------------------------------------------------------------------------------->
+
+  <!-- <footer>
+    <div class="container">
+        <div class="card-columns">
+            <div class="card">
+                <div class="social">
+                    <a class="logo-footer" href="#">
+                        <img src="images/logo_bidonline%402x.png"
+                            srcset="https://bidonline.my/images/logo_bidonline.png 320w, https://bidonline.my/images/logo_bidonline@2x.png 767w, https://bidonline.my/images/logo_bidonline@3x.png 1200w"
+                            alt="Bidonline.my" width="135" /> </a>
+                </div>
+            </div>
+            <div class="card">
+                <h5>Bid Battle</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a href="/Home">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Auctions">
+                            Auctions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h5>Contact</h5>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <i class="fad fa-phone-square-alt"></i>
+                        <a class="text-reset" href="tel:+60361378828">+216 93 337 330</a>
+                    </li>
+                    <li>
+                        <i class="fad fa-envelope"></i>
+                        <a class="text-reset" href="support@gmail.com">support&#64;gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer> -->
+<app-footer></app-footer>
+<!------------------------------------------------------------------------------->
+          </body>

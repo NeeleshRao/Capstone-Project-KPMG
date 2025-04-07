@@ -1,0 +1,101 @@
+<body class="page app  items index">
+
+    <!------------------------------------------------------------------------------->
+
+    <app-header></app-header>
+
+    <!------------------------------------------------------------------------------->
+
+    <div class="content">
+        <div class="list list-property">
+            <div class="container">
+                <form method="GET">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-5">
+
+                            <div id="daterangepicker-inline" class="daterangepicker-inline mb-3">
+                                <input type="text" class="form-control form-control-date-inline" name="date"
+                                    placeholder="Date" value="">
+                            </div>
+
+                            <div class="filters">
+                                <h5>Search</h5>
+                                <div class="form-group">
+                                    <input matInput (keyup)="applyFilter($event)" type="text" class="form-control"
+                                        placeholder="Search Keywords" name="keyword" value="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-9 col-md-7">
+                            <div class="header row">
+                                <div class="filter-group col-md-5 col-lg-4">
+                                    <div class="row no-gutters">
+                                        <div class="col-12">
+                                            <div class="dropdown dropdown-filter">
+                                                <button class="btn btn-link dropdown-toggle" type="button"
+                                                    id="dropdownMenuSort" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Sort By
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuSort">
+                                                    <button class="dropdown-item" href="#" (click)="sortAuctions('latest')">
+                                                      Sort By Latest Auction Date
+                                                    </button>
+                                                    <button class="dropdown-item" href="#" (click)="sortAuctions('nearest')">
+                                                      Sort By Nearest Auction Date
+                                                    </button>
+                                                    <button class="dropdown-item" href="#" (click)="sortAuctions('lowestPrice')">
+                                                      Sort By Lowest Price
+                                                    </button>
+                                                    <button class="dropdown-item" href="#" (click)="sortAuctions('highestPrice')">
+                                                      Sort By Highest Price
+                                                    </button>
+                                                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <!--------------------------------------------------------------------------------------->
+
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6" *ngFor="let auction of auctions">
+                                    <a [routerLink]="['/', auction.id, 'AuctionDetail']"
+                                        [queryParams]="{ auctionId:auction.id, auctionMinPrice:auction.minPrice }"
+                                        class="card card-property">
+                                        <div class="card-header">
+                                            <img class="cover"  src={{getImagePath(auction.product.category)}} />
+                                        </div>
+                                        <div class="card-body">
+                                            <h5>{{ auction.product.name}}</h5>
+                                            <p class="address"></p>
+                                            <div class="built">
+                                                <span><i class=""> Category : </i>{{ auction.product.category}}</span>
+                                            </div>
+                                            <div class="built">
+                                                <span><i class=""> Product name : </i>{{ auction.product.name}}</span>
+                                            </div>
+                                            <div class="built">
+                                                <span><i class=""> Minimum price : </i>{{ auction.minPrice }} Rupees</span>
+                                            </div>
+                                            <span><i class=""> End date : </i>{{ auction.endDate | date:'medium' }}</span>
+                                            <hr>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!--------------------------------------------------------------------------------------->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------->
+    <app-footer></app-footer>
+    <!------------------------------------------------------------------------------->
+</body>

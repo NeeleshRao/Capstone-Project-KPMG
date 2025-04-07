@@ -1,0 +1,119 @@
+<body class="page app  home">
+
+    <!------------------------------------------------------------------------------->
+
+    <app-header></app-header>
+
+    <!------------------------------------------------------------------------------->
+
+    <div class="content">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="jumbo-search">
+                    <ul class="nav nav-tabs nav-tabs-search">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-name="vehicle">
+                                <i class="fad fa-car"></i>Auction
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="search-content search-vehicle">
+                        <h1>Search for auction</h1>
+
+                        <form method="GET" action="#">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input matInput (keyup)="applyFilter($event)" type="text" class="form-control" name="keyword"
+                                        placeholder="Search auction by product name">
+                                </div>                        
+                                
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">RM</span>
+                                        </div>
+                                        <input id="min_price" type="text" class="form-control  " name="min_price"
+                                            value="" placeholder="Min Price">
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">RM</span>
+                                        </div>
+                                        <input id="max_price" type="text" class="form-control  " name="max_price"
+                                            value="" placeholder="Max Price">
+                                    </div>
+                                </div>                                
+                                
+                                <div class="form-group col-md-2">
+                                    <button class="btn btn-primary btn-block" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        </div>
+
+        <div class="section section-property">
+            <div class="container">
+                <div class="header header-inline">
+                    <div>
+                        <h3>Most Recent</h3>
+                        <p class="subtitle">Latest lots listed for auction.</p>
+                    </div>
+                    <a href="itemsfdee.html?type=RECENT">View More</a>
+                </div>
+
+                <div class="row">
+                                
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" *ngFor="let auction of auctions">
+                        <a [routerLink]="['/', auction.id, 'AuctionDetail']"
+                [queryParams]="{ auctionId:auction.id, auctionMinPrice:auction.minPrice }" class="card card-property">
+                            <div class="card-header">
+                                <img class="cover"
+                                    src={{getImagePath(auction.product.category)}} />
+                            </div>
+                            <div class="card-body">
+
+
+                                <h5>{{ auction.product.name}}</h5>
+                                <p class="address">India Office</p>
+                                <div class="built">
+                                    <span><i class="">Category : </i>{{ auction.product.category}}</span>
+                                </div>
+                                <div class="built">
+                                    <span><i class="">Product name : </i>{{ auction.product.name}}</span>
+                                </div>
+                                <div class="built">
+                                    <span><i class="">Minimum price : </i>{{ auction.minPrice }} </span>
+                                </div>
+                                <div class="built">
+                                    <span><i class="">End date : </i>{{ auction.endDate | date:'medium' }}</span>
+                                </div>
+
+                                <hr>
+
+                                <p class="eye">
+                                    <i class="fad fa-eye"></i>
+                                    <span>19</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------->
+    <app-footer></app-footer>
+    <!------------------------------------------------------------------------------->
+</body>

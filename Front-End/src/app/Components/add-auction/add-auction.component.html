@@ -1,0 +1,95 @@
+<body class="page app  auctions index">
+
+    <!------------------------------------------------------------------------------->
+
+    <app-header></app-header>
+
+    <!------------------------------------------------------------------------------->
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title mb-2">Add Auction</h2>
+                        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                            <div class="form-floating mb-3">
+                                <label for="name">Product name : </label>
+                                <input type="text" class="form-control" id="name" formControlName="name" required>
+                                <!-- <div *ngIf="myForm.get('nomEtudiant').touched && myForm.get('nomEtudiant').errors?.required" class="error-message">Username is required</div>-->
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <label for="category">Category : </label>
+                                <select class="form-control" id="category" formControlName="category">
+                                    <option value="">-- Select Category --</option>
+                                    <option value="vehicles">VEHICLES</option>
+                                    <option value="home">HOME</option>
+                                    <option value="hobbies">HOBBIES</option>
+                                    <option value="clothing">CLOTHING</option>
+                                    <option value="electronics">ELECTRONICS</option>
+                                  </select>
+                                <!-- <button class="btn btn-link dropdown-toggle" type="button"
+                                                    id="dropdownMenuSort" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                    Category
+                                                </button>
+                                
+                                <button class="dropdown-item" href="#" (click)="chooseCategory('vehicles')" id="category" formControlName="category"
+                                required>
+                                    VEHICLES
+                                  </button>
+                                  <button class="dropdown-item" href="#" (click)="chooseCategory('home')" id="category" formControlName="category"
+                                  required>
+                                    HOME
+                                  </button>
+                                  <button class="dropdown-item" href="#" (click)="chooseCategory('hobbies')" id="category" formControlName="category"
+                                  required>
+                                    HOBBIES
+                                  </button>
+                                  <button class="dropdown-item" href="#" (click)="chooseCategory('clothing')" id="category" formControlName="category"
+                                  required>
+                                    CLOTHING
+                                  </button>
+                                  <button class="dropdown-item" href="#" (click)="chooseCategory('electronics')" id="category" formControlName="category"
+                                  required>
+                                    ELECTRONICS
+                                  </button> -->
+
+                                <!-- <input type="text" class="form-control" id="category" formControlName="category"
+                                    required> -->
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <label for="minPrice">Minmum price : </label>
+                                <input type="number" class="form-control" id="minPrice" formControlName="minPrice"
+                                    required>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <label for="endDate">End Date : </label>
+                                <input type="datetime-local" class="form-control" id="endDate" formControlName="endDate"
+                                    required>
+                            </div>
+
+                            <!-- <div class="form-floating mb-3">
+                                <label for="endDate">Product Image :</label>
+                                <input type="file" class="form-control" id="prodImage" formControlName="prodImage"
+                                    required>
+                            </div> -->
+
+                            <!--<button type="submit" class="btn btn-primary btn-orange  w-100 mt-3" (click)="login()">Login</button>
+                    <button type="submit" class="btn btn-primary btn-orange  w-100 mt-3" [disabled]="addForm.invalid" routerLink="/Singin">Register</button>-->
+
+                            <button type="submit" class="btn btn-primary btn-orange  w-100 mt-3">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------->
+    <app-footer></app-footer>
+    <!------------------------------------------------------------------------------->
+</body>
