@@ -9,4 +9,5 @@ export class AuctionDetails {
     minPrice!: number;
     endDate!: Date;
     auctionStatus: string="";
+    userId?: number;
   }

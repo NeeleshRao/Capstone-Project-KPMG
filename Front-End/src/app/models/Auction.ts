@@ -8,5 +8,6 @@ export interface Auction {
   };
   minPrice: number;
   endDate: Date;
+  userId?: number;
 }
 

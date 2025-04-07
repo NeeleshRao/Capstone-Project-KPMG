@@ -1,0 +1,30 @@
+footer {
+    background-color: white;
+}
+footer .container {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+  }
+  
+  footer .card-columns {
+    display: flex;
+    flex-direction: row;       /* Make items go horizontally */
+    justify-content: space-between;
+    align-items: center;       /* Vertically center the cards */
+    width: 100%;
+    max-width: 1200px;         /* Optional: limit max width */
+    padding: 2rem;
+    gap: 2rem;                 /* Spacing between cards */
+  }
+  
+  footer .card {
+    flex: 1;                   /* Let cards take equal width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center contents vertically */
+    align-items: center;      /* Center contents horizontally */
+    min-height: 150px;
+    text-align: center;
+  }
+  

@@ -58,8 +58,12 @@ public class AuctionController {
     public ResponseEntity<?> createBid(@PathVariable long auctionId, @RequestBody Bid bid) {
         var userDto = userRepository.findById(bid.getUserId()).orElseThrow(() -> new ResourceNotFoundException("User not found"));
         var auctionDto = findAuctionById(auctionId);
-
+        System.out.println(bid.getUserId());
         System.out.println(auctionDto.getUser().getId());
+        if ((int)bid.getUserId() == auctionDto.getUser().getId()) {
+            return ResponseEntity.badRequest()
+                    .body("You cannot bid on your own auction.");
+        }
 
         var bidDto = new BidDto();
         bidDto.setUser(userDto);
