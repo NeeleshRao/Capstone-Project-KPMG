@@ -111,4 +111,21 @@ export class AuctionDetailComponent {
     // Submit the bid if all conditions are met
     this.addBid(bidPrice);
   }
+
+  // Method to get the image path based on the category
+  getImagePath(category: string): string {
+    switch(category) {
+      case "VEHICLES":
+        return "../../../assets/images/vehicles.png";
+      case "HOME":
+        return "../../../assets/images/homes.png";
+      case "HOBBIES":
+        return "../../../assets/images/hobbies.png";
+      case "CLOTHING":
+        return "../../../assets/images/clothing.png";
+      case "ELECTRONICS":
+        return "../../../assets/images/electronics.jpg";
+    }
+    return "";
+  }
 }
